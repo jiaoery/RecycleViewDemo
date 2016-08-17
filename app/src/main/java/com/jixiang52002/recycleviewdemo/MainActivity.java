@@ -6,6 +6,8 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,10 +25,25 @@ public class MainActivity extends AppCompatActivity {
         rv.setItemAnimator(new DefaultItemAnimator());
 //添加分割线
         rv.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.HORIZONTAL_LIST));
+        MyAdapter adapter=new MyAdapter();
 
         //为recycleview设置适配器
-        rv.setAdapter(new MyAdapter());
+        rv.setAdapter(adapter);
 
+        adapter.setOnItemClickListener(new OnRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(View view, CellData data,int position) {
+                Toast.makeText(MainActivity.this,"data:title="+data.titile+"content="+data.content+position,Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
+    }
+
+    public static interface OnRecyclerViewItemClickListener {
+        void onItemClick(View view , CellData data,int position);
     }
 
 }

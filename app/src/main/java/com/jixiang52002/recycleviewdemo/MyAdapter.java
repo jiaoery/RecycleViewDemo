@@ -9,7 +9,14 @@ import android.widget.TextView;
 /**
  * Created by jixiang52002 on 2016/8/17.
  */
-class MyAdapter extends RecyclerView.Adapter {
+class MyAdapter extends RecyclerView.Adapter{
+
+
+    private MainActivity.OnRecyclerViewItemClickListener mOnItemClickListener = null;
+    public void setOnItemClickListener(MainActivity.OnRecyclerViewItemClickListener listener) {
+        this.mOnItemClickListener = listener;
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder {
         private View root;
 
@@ -17,6 +24,7 @@ class MyAdapter extends RecyclerView.Adapter {
 
         public ViewHolder(View root) {
             super(root);
+            this.root=root;
             tvTitle= (TextView) root.findViewById(R.id.tv_titile);
             tvContent= (TextView) root.findViewById(R.id.tv_content);
 //            th = itemView;
@@ -48,13 +56,26 @@ class MyAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 //        TextView tv = (TextView) holder.itemView;
 //        tv.setText(data[position]);
-        ViewHolder vh= (ViewHolder) holder;
+        final ViewHolder vh= (ViewHolder) holder;
 
         CellData cd=data[position];
 
         vh.getTvTitle().setText(cd.titile);
         vh.getTvContent().setText(cd.content);
+
+        vh.root.setTag(cd);
+
+        if(mOnItemClickListener!=null){
+            vh.root.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos=vh.getLayoutPosition();
+                    mOnItemClickListener.onItemClick(v, (CellData) v.getTag(),pos);
+                }
+            });
+        }
     }
+
 
     //数量
     @Override
