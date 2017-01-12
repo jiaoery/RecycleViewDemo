@@ -17,6 +17,7 @@ import android.view.View;
 
 public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
+    //分割线资源 可以自定义
     private static final int[] ATTRS = new int[]{
            android.R.attr.divider
     };

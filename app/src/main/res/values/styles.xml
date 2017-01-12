@@ -10,7 +10,7 @@
     </style>
 
     <style name="divier_style">
-
+        <item name="divider">@drawable/divider_bg</item>
     </style>
 
 </resources>

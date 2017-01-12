@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.jixiang52002.recycleviewdemo.MainActivity">
 
     <FrameLayout
@@ -28,7 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/rv_main"
-        android:layout_below="@+id/deleteBar">
+        android:layout_below="@+id/deleteBar"
+        app:divider="@drawable/divider_bg">
 
     </android.support.v7.widget.RecyclerView>
 
