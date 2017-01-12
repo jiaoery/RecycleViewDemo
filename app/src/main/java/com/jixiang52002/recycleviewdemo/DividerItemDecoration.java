@@ -25,13 +25,16 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
     public static final int VERTICAL_LIST = LinearLayoutManager.VERTICAL;
 
+    //分割条对象
     private Drawable mDivider;
 
     private int mOrientation;
 
     public DividerItemDecoration(Context context, int orientation) {
         final TypedArray a = context.obtainStyledAttributes(ATTRS);
+        //获取系统提供的分割条和drawable对象
         mDivider = a.getDrawable(0);
+        //回收TypeArray所占用的资源
         a.recycle();
         setOrientation(orientation);
     }
@@ -53,16 +56,23 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
     }
 
     public void drawVertical(Canvas c, RecyclerView parent) {
+        //获取列表项距离左边缘的距离
         final int left = parent.getPaddingLeft();
+        //获取列表项距离右边缘的距离
         final int right = parent.getWidth() - parent.getPaddingRight();
-
+        //获取列表项的总数
         final int childCount = parent.getChildCount();
+        //开始绘制所有列表项之间的分割线
         for (int i = 0; i < childCount; i++) {
             final View child = parent.getChildAt(i);
+            //获取当前列表项布局参数信息
             final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
                     .getLayoutParams();
+            //获取分割条左上角的纵坐标
             final int top = child.getBottom() + params.bottomMargin;
+            //获取分割条右下角的纵坐标
             final int bottom = top + mDivider.getIntrinsicHeight();
+            //分割条矩形的形状的绘制范围
             mDivider.setBounds(left, top, right, bottom);
             mDivider.draw(c);
         }

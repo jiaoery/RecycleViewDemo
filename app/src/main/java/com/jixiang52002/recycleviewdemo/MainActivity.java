@@ -12,38 +12,37 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView rv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        rv=new RecyclerView(this);
+        rv = new RecyclerView(this);
         setContentView(rv);
-        //设置recycleview的布局对象,死党额惨呼为是否反转
-        rv.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        //设置recycleview的布局对象,第三个参数为是否反转
+        rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 //        rv.setLayoutManager(new C(this,2));
 
         //设置Item增加、移除动画
         rv.setItemAnimator(new DefaultItemAnimator());
-//添加分割线
-        rv.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.HORIZONTAL_LIST));
-        MyAdapter adapter=new MyAdapter();
+        //添加分割线
+        rv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL_LIST));
+        MyAdapter adapter = new MyAdapter();
 
         //为recycleview设置适配器
         rv.setAdapter(adapter);
 
         adapter.setOnItemClickListener(new OnRecyclerViewItemClickListener() {
             @Override
-            public void onItemClick(View view, CellData data,int position) {
-                Toast.makeText(MainActivity.this,"data:title="+data.titile+"content="+data.content+position,Toast.LENGTH_SHORT).show();
+            public void onItemClick(View view, CellData data, int position) {
+                Toast.makeText(MainActivity.this, "data:title=" + data.titile + "content=" + data.content + position, Toast.LENGTH_SHORT).show();
             }
         });
-
-
 
 
     }
 
     public static interface OnRecyclerViewItemClickListener {
-        void onItemClick(View view , CellData data,int position);
+        void onItemClick(View view, CellData data, int position);
     }
 
 }
