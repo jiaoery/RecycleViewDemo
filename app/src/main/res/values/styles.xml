@@ -6,7 +6,11 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <!--<item name="android:divider"></item>-->
+        <item name="android:divider">@drawable/divider_bg</item>
+    </style>
+
+    <style name="divier_style">
+
     </style>
 
 </resources>
