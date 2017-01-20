@@ -1,4 +1,4 @@
-package com.jixiang52002.recycleviewdemo;
+package com.jixiang52002.recycleviewdemo.decoration;
 
 
 import android.content.Context;

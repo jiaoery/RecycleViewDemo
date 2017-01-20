@@ -1,4 +1,4 @@
-package com.jixiang52002.recycleviewdemo;
+package com.jixiang52002.recycleviewdemo.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,6 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.jixiang52002.recycleviewdemo.CellData;
+import com.jixiang52002.recycleviewdemo.MainActivity;
+import com.jixiang52002.recycleviewdemo.R;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -16,7 +20,7 @@ import java.util.List;
 /**
  * Created by jixiang52002 on 2016/8/17.
  */
-class MyAdapter extends RecyclerView.Adapter{
+public class MyAdapter extends RecyclerView.Adapter{
 
 
     private MainActivity.OnRecyclerViewItemClickListener mOnItemClickListener = null;
