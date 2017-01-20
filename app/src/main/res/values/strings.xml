@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">RecycleViewDemo</string>
     <string name="original_recyclerview">原生自带recyclerview</string>
+    <string name="toolbar_function">toolbar功能展示页</string>
+    <string name="easyrecyclerview_funtion">EasyRecyclerView功能</string>
+    <string name="chat">聊天</string>
 </resources>

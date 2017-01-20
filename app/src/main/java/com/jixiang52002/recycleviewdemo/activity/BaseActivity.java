@@ -57,6 +57,7 @@ public class BaseActivity extends AppCompatActivity {
 //        mToolBar.setNavigationIcon(R.drawable.icon_left);
         setSupportActionBar(mToolBar);
         ActionBar actionBar = getSupportActionBar();
+        //无效化actionbar
         actionBar.setDisplayShowHomeEnabled(true);
         //左边返回键功能
         actionBar.setDefaultDisplayHomeAsUpEnabled(true);

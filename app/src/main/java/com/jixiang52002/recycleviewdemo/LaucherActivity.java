@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import com.jixiang52002.recycleviewdemo.activity.BaseActivity;
+import com.jixiang52002.recycleviewdemo.activity.EasyRecyclerViewActivity;
+import com.jixiang52002.recycleviewdemo.activity.ToolBarActivity;
 import com.jixiang52002.recycleviewdemo.adapter.FunctionAdapter;
 import com.jixiang52002.recycleviewdemo.decoration.DividerItemDecoration;
 import com.jude.easyrecyclerview.EasyRecyclerView;
@@ -64,15 +66,20 @@ public class LaucherActivity extends BaseActivity implements RecyclerArrayAdapte
         functions=new ArrayList<>();
         functions.add("native recyclerview");
         functions.add("easyrecyclerview");
+        functions.add("toolsbar");
     }
 
     @Override
     public void onItemClick(int position) {
         switch (position){
-            case 0:
+            case 0://原生的rcyclerview
                 startActivity(new Intent(this,MainActivity.class));
                 break;
-            case 1:
+            case 1://easyrecyclerview功能
+                startActivity(new Intent(this, EasyRecyclerViewActivity.class));
+                break;
+            case 2://toolbae功能
+                startActivity(new Intent(this,ToolBarActivity.class));
                 break;
         }
     }
