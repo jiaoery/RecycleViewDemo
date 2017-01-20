@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="grey_rv">#FF9B9798</color>
     <color name="grey_item">#FFDED9DA</color>
+    <color name="white">#ffffff</color>
 </resources>

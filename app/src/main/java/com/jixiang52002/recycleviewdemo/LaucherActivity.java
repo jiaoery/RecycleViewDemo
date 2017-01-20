@@ -6,7 +6,9 @@ import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 
+import com.jixiang52002.recycleviewdemo.activity.BaseActivity;
 import com.jixiang52002.recycleviewdemo.adapter.FunctionAdapter;
 import com.jixiang52002.recycleviewdemo.decoration.DividerItemDecoration;
 import com.jude.easyrecyclerview.EasyRecyclerView;
@@ -19,8 +21,9 @@ import java.util.List;
  * 启动页
  */
 
-public class LaucherActivity extends Activity implements RecyclerArrayAdapter.OnItemClickListener{
+public class LaucherActivity extends BaseActivity implements RecyclerArrayAdapter.OnItemClickListener{
 
+    private Toolbar toolbar;
     EasyRecyclerView easyRecyclerView;
 
     private List<String> functions;//功能界面
@@ -34,6 +37,8 @@ public class LaucherActivity extends Activity implements RecyclerArrayAdapter.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_laucher);
         easyRecyclerView= (EasyRecyclerView) findViewById(R.id.erv_laucher);
+        toolbar= (Toolbar) findViewById(R.id.toolbar);
+        initToolbar(toolbar,getString(R.string.app_name));
         initData();
         initView();
 

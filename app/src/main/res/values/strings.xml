@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RecycleViewDemo</string>
+    <string name="original_recyclerview">原生自带recyclerview</string>
 </resources>
