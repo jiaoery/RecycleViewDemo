@@ -29,7 +29,6 @@ public class MainActivity extends BaseActivity {
     private LinearLayoutManager layoutManager;
     private float dy1;
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +47,6 @@ public class MainActivity extends BaseActivity {
         //添加分割线
         rv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
         final MyAdapter adapter = new MyAdapter(this);
-//
 //        //为recycleview设置适配器
         rv.setAdapter(adapter);
 
@@ -59,23 +57,9 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-
-//        ViewOutlineProvider viewOutlineProvider = new ViewOutlineProvider() {
-//
-//            @Override
-//            public void getOutline(View view, Outline outline) {
-//                // 获取按钮的尺寸
-//                int fabSize = getResources().getDimensionPixelSize(
-//                        R.dimen.fab_size);
-//                // 设置轮廓的尺寸
-//                outline.setOval(-4, -4, fabSize + 2, fabSize + 2);
-//
-//            }
-//        };
+        initFab();
         // 获得右下角圆形按钮对象
         fabAdd = findViewById(R.id.fab_add);
-//
-//        fabAdd.setOutlineProvider(viewOutlineProvider);
 
 
         //  处理添加按钮的单击事件
@@ -133,6 +117,27 @@ public class MainActivity extends BaseActivity {
 
             }
         });
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void initFab() {
+        //编译版本为android5.0以上调用
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){
+            ViewOutlineProvider viewOutlineProvider = new ViewOutlineProvider() {
+
+                @Override
+                public void getOutline(View view, Outline outline) {
+                    // 获取按钮的尺寸
+                    int fabSize = getResources().getDimensionPixelSize(
+                            R.dimen.fab_size);
+                    // 设置轮廓的尺寸
+                    outline.setOval(-4, -4, fabSize + 2, fabSize + 2);
+
+                }
+            };
+            fabAdd.setOutlineProvider(viewOutlineProvider);
+        }
+
     }
 
     //显示顶部删除栏目
