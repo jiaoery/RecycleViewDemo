@@ -1,5 +1,6 @@
 package com.jixiang52002.recycleviewdemo;
 
+import android.annotation.TargetApi;
 import android.graphics.Outline;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -57,22 +58,24 @@ public class MainActivity extends BaseActivity {
                 Toast.makeText(MainActivity.this, "data:title=" + data.titile + "content=" + data.content + position, Toast.LENGTH_SHORT).show();
             }
         });
-        ViewOutlineProvider viewOutlineProvider = new ViewOutlineProvider() {
 
-            @Override
-            public void getOutline(View view, Outline outline) {
-                // 获取按钮的尺寸
-                int fabSize = getResources().getDimensionPixelSize(
-                        R.dimen.fab_size);
-                // 设置轮廓的尺寸
-                outline.setOval(-4, -4, fabSize + 2, fabSize + 2);
 
-            }
-        };
+//        ViewOutlineProvider viewOutlineProvider = new ViewOutlineProvider() {
+//
+//            @Override
+//            public void getOutline(View view, Outline outline) {
+//                // 获取按钮的尺寸
+//                int fabSize = getResources().getDimensionPixelSize(
+//                        R.dimen.fab_size);
+//                // 设置轮廓的尺寸
+//                outline.setOval(-4, -4, fabSize + 2, fabSize + 2);
+//
+//            }
+//        };
         // 获得右下角圆形按钮对象
         fabAdd = findViewById(R.id.fab_add);
 //
-        fabAdd.setOutlineProvider(viewOutlineProvider);
+//        fabAdd.setOutlineProvider(viewOutlineProvider);
 
 
         //  处理添加按钮的单击事件

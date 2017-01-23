@@ -4,4 +4,13 @@
     <string name="toolbar_function">toolbar功能展示页</string>
     <string name="easyrecyclerview_funtion">EasyRecyclerView功能</string>
     <string name="chat">聊天</string>
+
+    <string name="refresh_and_more">Refresh&amp;More</string>
+    <string name="header_and_footer">Header&amp;Footer</string>
+    <string name="multi_style">MultiType</string>
+    <string name="collapsing">Collapsing</string>
+    <string name="staggered_grid">StaggeredGrid</string>
+    <string name="horizontal">Horizontal</string>
+    <string name="stiky_header">StickyHeader</string>
+    <string name="insert">Insert</string>
 </resources>

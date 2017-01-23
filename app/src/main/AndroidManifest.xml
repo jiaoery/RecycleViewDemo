@@ -17,7 +17,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.ToolBarActivity" />
-        <activity android:name=".activity.EasyRecyclerViewActivity"></activity>
+        <activity android:name=".activity.EasyRecyclerViewActivity" />
+        <activity android:name=".activity.RefreshAndMoreActivity" />
+        <activity android:name=".activity.MultiStyleActivity" />
+        <activity android:name=".activity.HeaderFooterActivity" />
+        <activity android:name=".activity.CollapsingActivity" />
+        <activity android:name=".activity.StaggeredGridActivity" />
+        <activity android:name=".activity.HorizontalActivity" />
+        <activity android:name=".activity.StickyHeaderActivity" />
+        <activity android:name=".activity.InsertActivity"></activity>
     </application>
 
 </manifest>
