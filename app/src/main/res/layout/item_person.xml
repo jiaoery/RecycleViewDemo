@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:gravity="center_vertical"
+            android:textColor="@android:color/darker_gray"
             />
         <TextView
             android:id="@+id/person_sign"
